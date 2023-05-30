@@ -1,17 +1,17 @@
 //main layouts
-.container {
-	max-width: 180rem;
-	margin: 0 auto;
-}
+// .container {
+// 	max-width: 180rem;
+// 	margin: 0 auto;
+// }
 
 //main site container
 #site-wrapper {
 	position: relative;
 	height: 100%;
-	padding: 2rem;
-	@media (min-width: 180rem) {
-		padding: 0;
-	}
+	padding: 2.5rem;
+	// @media (min-width: 180rem) {
+	// 	padding: 0;
+	// }
 }
 
 .start-page {
