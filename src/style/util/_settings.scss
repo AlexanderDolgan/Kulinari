@@ -9,17 +9,17 @@ $second-font-family: 'helvetica-roman', sans-serif;
 $third-font-family: 'helvetica-roman', sans-serif;
 $global-font-size: 8px;
 $global-font-weight: 400;
-$body-font-size: 2rem;
+$body-font-size: 2.5rem;
 $global-line-height: 1.25;
 $font-smooth: antialiased;
 
 //Colors
 $colors: (
-	primary: hsl(37, 100%, 84%),
-	secondary: hsl(24, 58%, 58%),
-	third: hsl(153, 28%, 75%),
+	primary: hsl(165, 100%, 20%),
+	secondary: hsl(58, 63%, 63%),
+	third: hsl(138, 56%, 92%),
 	fourth: hsl(38, 100%, 98%),
-	text: hsl(0,0%,17%),
+	text: hsl(0, 0%, 100%),
 	text-col: hsl(39, 9%, 61%),
 	text-col2: hsl(19, 8%, 40%),
 	accept: hsl(90,45%,45%),
@@ -30,7 +30,7 @@ $colors: (
 	lightgray: hsl(0,0%,92%),
 );
 
-$body-background: #f5f4f8;
+$body-background: #05795C;
 $body-font-color: ac(text);
 
 // Media q breakpoints

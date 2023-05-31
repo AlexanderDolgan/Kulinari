@@ -36,3 +36,19 @@
 // 	height: auto;
 // 	display: block;
 // }
+
+@mixin responsive-font-size-base {
+  font-size: $body-font-size;
+  
+  @media (min-width: $b-medium) {
+    font-size: calc(#{$body-font-size} + 1vw);
+  }
+}
+
+@mixin responsive-font-size($size, $vw) {
+  font-size: $size;
+  
+  @media (min-width: $b-medium) {
+    font-size: calc(#{$size} + #{$vw});
+  }
+}

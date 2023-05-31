@@ -1,8 +1,8 @@
-//main layouts
-// .container {
-// 	max-width: 180rem;
-// 	margin: 0 auto;
-// }
+// main layouts
+.container {
+	// max-width: 180rem;
+	margin: 0 auto;
+}
 
 //main site container
 #site-wrapper {
@@ -14,42 +14,17 @@
 	// }
 }
 
-.start-page {
-	padding: 0;
-	height: calc( 100% - 5rem);
-	display: flex;
-	flex-flow: row nowrap;
-	align-content: center;
-	justify-content: center;
-	padding: 0 2rem;
-	@media (min-width: $b-medium) {
-		height: calc( 100% - 8rem);
-	}
-}
-
 #rest-header {
-	position: relative;
-	@media (min-width: $b-large) {
-		padding-top: 4rem;
-	}
+	@extend .container;
 }
 
 main {
 	@extend .container;
-	padding: 4rem 0;
+	padding: 0;
 	display: flex;
 	flex-flow: row nowrap;
 	@media (min-width: $b-xlarge) {
-		padding: 9rem 0;
-	}
-}
-
-main .rest-nav {
-	display: none;
-	min-width: 39.25rem;
-	@media (min-width: $b-xlarge) {
-		display: block;
-		width: math.div(3,12);
+		// padding: 9rem 0;
 	}
 }
 

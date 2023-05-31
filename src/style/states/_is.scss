@@ -6,6 +6,13 @@
 	opacity: 1;
 }
 
+.is-active-address {
+	color: ac(secondary);
+	& path {
+		fill: ac(secondary);
+	}
+}
+
 .is-desaturate {
 	color: mix(white, ac(text), 50%);	
 }
@@ -28,4 +35,8 @@
 
 .is-hide {
 	display: none;
+}
+
+.is-primary-color {
+	color: ac(secondary);
 }

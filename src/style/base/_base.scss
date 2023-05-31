@@ -70,21 +70,41 @@ h6 {
 }
 
 
-h1 {font-size: 45px;}
-h2 {font-size: 30px;}
-h3 {font-size: 18px;}
-h4 {font-size: 16px;}
-h5 {font-size: 14px;}
+h1 {
+	@include responsive-font-size(17rem, 1vw)
+}
+h2 {
+	@include responsive-font-size(14rem, 1vw)
+}
+h3 {
+	@include responsive-font-size(8.75rem, 1vw)
+}
+h4 {
+	@include responsive-font-size(6.5rem, 1vw)
+}
+h5 {
+	@include responsive-font-size(1rem, 1vw)
+}
 h6 {font-size: 14px;}
 
 @media (min-width: $b-medium) {
-	h1 {font-size: 56px;}
-	h3 {font-size: 18px;}
+	h1 {
+		@include responsive-font-size(17rem, 1vw)
+	}
+	h2 {
+		@include responsive-font-size(14rem, 1vw)
+	}
 }
 
 @media (min-width: $b-xxlarge) {
-	h1 {font-size: 72px;}
-	h2 {font-size: 36px;}
+	// h1 {font-size: 72px;}
+	// h2 {font-size: 36px;}
+	h1 {
+		@include responsive-font-size(17rem, 1vw)
+	}
+	h2 {
+		@include responsive-font-size(14rem, 1vw)
+	}
 }
 
 //Bloquote
