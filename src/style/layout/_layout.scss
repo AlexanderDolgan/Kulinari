@@ -22,7 +22,7 @@ main {
 	@extend .container;
 	padding: 0;
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	@media (min-width: $b-xlarge) {
 		// padding: 9rem 0;
 	}
@@ -37,13 +37,6 @@ main {
 
 .woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
 	margin-right: 2%;
-}
-
-#main {
-	height: 100%;
-	background-color: ac(white);
-	max-width: 1080px;
-	margin: 0 auto;
 }
 
 #site-header {

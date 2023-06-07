@@ -71,7 +71,8 @@ h6 {
 
 
 h1 {
-	@include responsive-font-size(17rem, 1vw)
+	@include responsive-font-size(17rem, 1vw);
+	line-height: 1;
 }
 h2 {
 	@include responsive-font-size(14rem, 1vw)
