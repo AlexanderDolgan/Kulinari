@@ -1,18 +1,26 @@
 .hero {
   position: relative;
-  max-width: 75vw;
+  margin-top: 4rem;
+  width: 100%;
+  overflow: hidden;
+  @media (min-width: $b-medium) {
+    max-width: 75vw;
+  }
 }
 
 .hero .hero-main-header {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .hero .hero-float-img {
   position: relative;
   display: block;
   width: 100%;
-  max-width: 123rem;
-  margin-top: -40rem;
+  min-width: 57rem;
   text-align: right;
+  @media (min-width: $b-medium) {
+    margin-top: -40rem;
+    max-width: 123rem;
+  }
 }
