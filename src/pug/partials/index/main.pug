@@ -1,5 +1,5 @@
 main
-	.hero 
+	section.hero 
 		h1.hero-main-header
 			| Грузинская кухня 
 			span.is-primary-color по&nbsp;домашним рецептам
@@ -7,7 +7,7 @@ main
 		img(src="../img/photogallery/khinkali.png", alt="khinkali").hero-float-img
 		img(src="../img/assets/brand/kulinari-logo-sign.svg", alt="khinkali logo sign").hero-float-logo-sign
 
-	.k-about.container
+	section.k-about.container
 		.k-about__content
 			h2.k-about__header
 				| кафе «Кулинари»
@@ -15,3 +15,104 @@ main
 				| Кавказская кухня славится своими богатыми вкусами и ароматами, а грузинская кухня является одним из наиболее популярных и известных видов кавказской кухни. Если вы ищете ресторан с настоящим грузинским опытом, то стоит посетить наш ресторан.
 			p.k-about__text
 				| В нашем ресторане мы предлагаем вам не только аутентичную грузинскую кухню, но и уникальный интерьер, созданный с использованием традиционных грузинских элементов. Вы можете насладиться блюдами, приготовленными по старинным рецептам, в уютной атмосфере, которая подарит вам ощущение, что вы побывали в самой Грузии.
+
+	section.k-gallery
+		.k-gallery__content 
+			- var count = 1
+			while count <= 6
+				- var imageName = count.toString()
+				.k-gallery__content-item
+					img(src=`../img/photogallery/interior/interior-image-${imageName}.jpg`, alt=`interior ${imageName}`)
+				- count++
+
+
+	section.k-advantages
+		.k-advantages__item
+			.k-advantages__item-image
+				img(src="../img/assets/faces.svg", alt="kulinari advantages image")
+			.k-advantages__item-header
+				h2 
+					| Кулинария широкой души
+			.k-advantages__item-description
+				p 
+					| У нас готовят только грузины по семейным рецептам
+		.k-advantages__item
+			.k-advantages__item-image
+				img(src="../img/assets/pack.svg", alt="kulinari advantages image")
+			.k-advantages__item-header
+				h2 
+					| Для тех, кто спешит
+			.k-advantages__item-description
+				p 
+					| Свежие хинкали за три минуты? Без проблем!
+		.k-advantages__item
+			.k-advantages__item-image
+				img(src="../img/assets/bee.svg", alt="kulinari advantages image")
+			.k-advantages__item-header
+				h2 
+					| Все как надо
+			.k-advantages__item-description
+				p 
+					| Хоть у нас и кафе, все блюда ресторанного качества
+
+	section.k-gallery-dishes
+		.k-gallery-dishes__content
+			- var count = 1
+			while count <= 12
+				- var imageName = count.toString()
+				.k-gallery-dishes__item
+					img(src=`../img/photogallery/dishes/dish-${imageName}.jpg`, alt=`Image ${imageName}`)
+				- count++
+
+	section.k-delivery
+		.k-delivery__content 
+			.k-delivery__content-header
+				h2 
+					| Доставка
+			.k-delivery__content-text
+				p 
+					| Закажите доставку или заберите сами в любом из наших кафе.
+			.k-delivery__content-btn 
+				button.button 
+					| Перейти в меню
+
+	section.accordion
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  Что такое CapitalFlow?
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					p. 
+						CapitalFlow – это компания, которая предлагает инвестиционные, торговые, образовательные и ежедневные аналитические услуги всем, кто ищет финансовую независимость. У нас есть проверенная история предоставления финансовых услуг и богатый опыт, чтобы помочь нашим клиентам достичь своих финансовых целей.
+			
+			.accordion-item
+				.accordion-header
+					h2.accordion-title Что мне нужно, чтобы использовать CapitalFlow?
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					p. 
+						Для использования CapitalFlow вам необходимо иметь доступ к нашей торговой платформе и быть готовым вкладывать свои деньги. Вы можете начать торговлю с нами, отправив запрос на нашем сайте или через наш Telegram-канал.
+			
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  Как мне получить доступ к&nbsp;каналу в&nbsp;Telegram?
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					p. 
+						Чтобы получить доступ к нашему Telegram-каналу, вы можете присоединиться к нам, найдя нас поиском @CapitalFlow в приложении Telegram или перейдя по ссылке на Telegram на нашем сайте.
+			 
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  С какими компаниями сотрудничает CapitalFlow?
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					p. 
+						CapitalFlow сотрудничает с несколькими компаниями, включая Fora-Trade, Visa, Mastercard, Moonpay, Unionpay, Binance, OKX, Forbes, Tinkoff, Kraken, Altynbank, RBK, Kapital, Bybit, MQL5 и Metatrader.
+			
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  Предлагаете ли вы инвестиционные идеи?
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					p. 
+						Да, наша команда экспертов тщательно выбирает и составляет список проверенных инвестиционных инструментов, которые могут генерировать высокие доходы для наших клиентов.

@@ -1,0 +1,97 @@
+//about section
+
+.k-about {
+	margin-top: -3rem;
+  padding: 0 1rem;
+  &__content p:first-of-type {
+    margin-top: 8rem;
+  }
+}
+
+
+// interior gallery
+.k-gallery {
+  overflow-x: scroll;
+  // height: 50rem;
+  // @media (min-width: $b-medium) {
+  //   height: 100rem;
+  // }
+}
+
+.k-gallery__content {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.k-gallery__content-item {
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
+  & img {
+    // width: 100%;
+    // height: 100%;
+    max-height: 48rem;
+    display: block;
+  }
+}
+
+//advantages
+
+.k-advantages {
+  padding-left: 10%;
+  padding-bottom: 17.5rem;
+  &__item {
+    margin-top: 8rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    &-image img {
+      max-width: 20rem;
+    }
+    &-header {
+
+    }
+    &-description {
+
+    }
+  }
+}
+
+//gallery-dishes
+.k-gallery-dishes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.k-gallery-dishes {
+  padding: 0 1rem;
+}
+.k-gallery-dishes__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: .5rem;
+  // min-height: 100vh;
+  & .k-gallery-dishes__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//delivery
+.k-delivery {
+  margin-top: 70vh;
+  width: 100%;
+  & .k-delivery__content-btn {
+    margin-top: 4rem;
+    & button {
+      width: 100%;
+    }
+  }
+}

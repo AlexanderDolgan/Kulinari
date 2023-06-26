@@ -1,5 +1,7 @@
+@import 'other'; // all main styles
 @import 'btn'; // buttons
 @import 'form';
+@import 'accordion';
 @import 'nav';
 
 @import 'header';
@@ -8,5 +10,5 @@
 // @import 'rest-menu';
 @import 'form';
 // @import 'popup';
-@import 'btn';
+// @import 'btn';
 @import 'card';

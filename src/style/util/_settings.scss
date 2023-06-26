@@ -4,8 +4,8 @@
 
 //Global
 // $global-font-family: 'kazimir', serif;
-$global-font-family: 'bellota-bold', sans-serif;
-$second-font-family: 'helvetica-roman', sans-serif;
+$global-font-family: 'helvetica-roman', sans-serif;
+$second-font-family: 'bellota-bold', sans-serif;
 $third-font-family: 'helvetica-roman', sans-serif;
 $global-font-size: 8px;
 $global-font-weight: 400;
@@ -30,7 +30,7 @@ $colors: (
 	lightgray: hsl(0,0%,92%),
 );
 
-$body-background: #05795C;
+$body-background: ac(primary);
 $body-font-color: ac(text);
 
 // Media q breakpoints
@@ -57,7 +57,7 @@ $container-m: 1280px;
 
 $paragraph-lineheight: $global-line-height;
 
-$header-font-family: $global-font-family;
+$header-font-family: $second-font-family;
 $header-font-weight: normal;
 $header-color: $body-font-color;
 $header-text-transform: none;

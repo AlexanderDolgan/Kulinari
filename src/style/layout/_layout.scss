@@ -2,17 +2,13 @@
 .container {
 	// max-width: 180rem;
 	margin: 0 auto;
-	margin-top: 17.5rem;
-	@media (min-width: $b-medium) {
-		margin-top: 30rem;
-	}
 }
+
 
 //main site container
 #site-wrapper {
 	position: relative;
 	height: 100%;
-	padding: 1rem;
 	@media (min-width: $b-medium) {
 		padding: 0;
 	}
@@ -20,12 +16,22 @@
 
 #rest-header {
 	padding-top: 1rem;
+	background-color: ac(primary);
+}
+
+section {
+	padding: 17.5rem 1rem 0;
+	background-color: ac(primary);
+	@media (min-width: $b-medium) {
+		padding: 30rem 0;
+	}
 }
 
 main {
 	padding: 0;
 	display: flex;
 	flex-flow: row wrap;
+	overflow: hidden;
 	@media (min-width: $b-xlarge) {
 		// padding: 9rem 0;
 	}
