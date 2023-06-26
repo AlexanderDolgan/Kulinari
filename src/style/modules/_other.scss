@@ -95,3 +95,28 @@
     }
   }
 }
+
+
+//contacts
+.k-contacts {
+  position: relative;
+  width: 100%;
+  & .k-contacts__address {
+    margin-top: 4rem;
+    & ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      & li {
+        & a {
+          display: block;
+          padding-left: 10rem;
+          margin-top: 2rem;
+        }
+        & h3 a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
