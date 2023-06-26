@@ -30,5 +30,62 @@ accordionHeaders.forEach((accordionHeader) => {
     }
   });
 });
-  
+
 };
+
+window.addEventListener('DOMContentLoaded', function() {
+  var galleryContent = document.querySelector('#galleryContent');
+  var scrollAmount = 10; // Adjust the scroll amount as needed
+  var isScrolling = false;
+
+  // Function to handle the scroll event
+  function handleScroll(event) {
+    if (!isScrolling) {
+      isScrolling = true;
+
+      var delta = event.deltaY || event.detail || -event.wheelDelta;
+
+      if (delta > 0) {
+        // Scrolling down
+        adjustScrollPosition(scrollAmount);
+      } else {
+        // Scrolling up
+        adjustScrollPosition(-scrollAmount);
+      }
+
+      setTimeout(function() {
+        isScrolling = false;
+      }, 10); // Adjust the timeout duration as needed
+    }
+  }
+
+  // Event listener for wheel event
+  window.addEventListener('wheel', handleScroll);
+
+  // Function to set initial overflow-x value based on gallery visibility
+  function setInitialOverflow() {
+    var galleryVisible = isGalleryVisible();
+    galleryContent.style.overflowX = galleryVisible ? 'scroll' : 'hidden';
+  }
+
+  // Function to check if the gallery is visible on the screen
+  function isGalleryVisible() {
+    var rect = galleryContent.getBoundingClientRect();
+    return (
+      rect.left >= 0 &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  // Function to adjust the scroll position
+  function adjustScrollPosition(scrollAmount) {
+    galleryContent.scrollLeft += scrollAmount;
+  }
+
+  // Set initial overflow-x value
+  setInitialOverflow();
+
+  // Event listener for resize event
+  window.addEventListener('resize', setInitialOverflow);
+});
+

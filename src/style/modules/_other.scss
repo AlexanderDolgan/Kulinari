@@ -1,5 +1,4 @@
 //about section
-
 .k-about {
 	margin-top: -3rem;
   padding: 0 1rem;
@@ -37,7 +36,6 @@
 }
 
 //advantages
-
 .k-advantages {
   padding-left: 10%;
   padding-bottom: 17.5rem;
@@ -96,7 +94,6 @@
   }
 }
 
-
 //contacts
 .k-contacts {
   position: relative;
@@ -119,4 +116,20 @@
       }
     }
   }
+}
+
+//ya map
+.k-ya-map {
+  width: 100%;
+  min-height: 50rem;
+  padding-top: 8rem;
+  &__content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//welcome
+.k-welcome {
+  width: 100%;
 }
