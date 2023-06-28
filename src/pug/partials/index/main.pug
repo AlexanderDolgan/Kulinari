@@ -22,8 +22,8 @@ main
 			while count <= 6
 				- var imageName = count.toString()
 				.k-gallery__content-item
-					img(src=`../img/photogallery/interior/interior-image-${imageName}.jpg`, alt=`interior ${imageName}`)
-
+					img(src="../img/photogallery/interior/interior-image-" + imageName + ".jpg", alt="interior " + imageName)
+				- count++
 
 	section.k-advantages
 		.k-advantages__item
@@ -188,8 +188,33 @@ main
 				type="text/javascript"
 				charset="utf-8"
 				async
-				src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af0645d739bb61745f480591ba3f8e80a86426eb30ff56c7f3a768b31016ed18c&width=100%&height=500&lang=ru_RU&scroll=false"
+				src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af0645d739bb61745f480591ba3f8e80a86426eb30ff56c7f3a768b31016ed18c&width=100%&height=100%&lang=ru_RU&scroll=false"
 			)
+
+	section.k-reserve
+		.k-reserve__content
+			h2 Забронировать столик или написать нам отзыв
+			button.button.open-popup Написать
+			//- button.btn.cta-block-btn.open-popup Оставить заявку
+			.popup
+				.popup-content
+					button.close-popup Закрыть
+					h2 Оставить заявку
+					form#contact-form
+						label(for='name') Ваше имя
+						input#name(type='text' name='name' placeholder='Иван Иванов' required)
+						span.error-message#name-error
+
+						label(for='phone') *Номер телефона или почта
+						input#phone(type='text' name='phone' placeholder='+791655904737' required)
+						span.error-message#phone-error
+
+						label(for='other') Комментарий
+						input#other(type='textarea' name='other' placeholder='Комментарий')
+
+						button#send-button.button(type='submit') Отправить отзыв
+					#status
+
 
 	section.k-welcome
 		.k-welcome__content

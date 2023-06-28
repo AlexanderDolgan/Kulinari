@@ -32,7 +32,6 @@ accordionHeaders.forEach((accordionHeader) => {
 });
 
 };
-
 window.addEventListener('DOMContentLoaded', function() {
   var galleryContent = document.querySelector('#galleryContent');
   var scrollAmount = 10; // Adjust the scroll amount as needed
@@ -55,17 +54,19 @@ window.addEventListener('DOMContentLoaded', function() {
 
       setTimeout(function() {
         isScrolling = false;
-      }, 10); // Adjust the timeout duration as needed
+      }, 20); // Adjust the timeout duration as needed
     }
   }
-
-  // Event listener for wheel event
-  window.addEventListener('wheel', handleScroll);
 
   // Function to set initial overflow-x value based on gallery visibility
   function setInitialOverflow() {
     var galleryVisible = isGalleryVisible();
     galleryContent.style.overflowX = galleryVisible ? 'scroll' : 'hidden';
+
+    if (galleryVisible) {
+      // Start scrolling when gallery becomes visible
+      startScrolling();
+    }
   }
 
   // Function to check if the gallery is visible on the screen
@@ -82,10 +83,67 @@ window.addEventListener('DOMContentLoaded', function() {
     galleryContent.scrollLeft += scrollAmount;
   }
 
+  // Function to start scrolling the gallery
+  function startScrolling() {
+    window.addEventListener('wheel', handleScroll);
+  }
+
   // Set initial overflow-x value
   setInitialOverflow();
 
   // Event listener for resize event
   window.addEventListener('resize', setInitialOverflow);
+
+
+
+  // popup
+  const form = document.querySelector("#contact-form");
+const sendButton = document.querySelector("#send-button");
+
+async function sendFormDataToTelegram() {
+  const telegramBotApiUrl = 'https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN/sendMessage';
+  const telegramChatId = 'YOUR_TELEGRAM_CHAT_ID';
+
+  const formData = new FormData(form);
+  const formObject = Object.fromEntries(formData.entries());
+  const messageText = Object.entries(formObject).map(([key, value]) => `${key}: ${value}`).join('\n');
+
+  const response = await fetch(telegramBotApiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      chat_id: telegramChatId,
+      text: messageText
+    })
+  });
+
+  if (response.ok) {
+    alert('Ваша заявка была успешно отправлена!');
+  } else {
+    alert('Ошибка отправки заявки. Пожалуйста, попробуйте еще раз позже.');
+  }
+}
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  await sendFormDataToTelegram();
+  form.reset();
 });
 
+const sendButton = document.querySelector('#send-button');
+const requiredInputs = Array.from(form.querySelectorAll('input[required], textarea[required]'));
+
+function checkFormValidity() {
+  const isFormValid = requiredInputs.every(input => input.value.trim() !== '');
+  sendButton.disabled = !isFormValid;
+}
+
+requiredInputs.forEach(input => {
+  input.addEventListener('input', checkFormValidity);
+});
+
+checkFormValidity();
+
+});

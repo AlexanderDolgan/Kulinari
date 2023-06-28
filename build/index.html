@@ -243,7 +243,29 @@
       </section>
       <section class="k-ya-map">
         <div class="k-ya-map__content">
-          <script type="text/javascript" charset="utf-8" async="async" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af0645d739bb61745f480591ba3f8e80a86426eb30ff56c7f3a768b31016ed18c&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
+          <script type="text/javascript" charset="utf-8" async="async" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af0645d739bb61745f480591ba3f8e80a86426eb30ff56c7f3a768b31016ed18c&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+        </div>
+      </section>
+      <section class="k-reserve">
+        <div class="k-reserve__content">
+          <h2>Забронировать столик или написать нам отзыв</h2>
+          <button class="button open-popup">Написать</button>
+          <div class="popup">
+            <div class="popup-content">
+              <button class="close-popup">Закрыть</button>
+              <h2>Оставить заявку</h2>
+              <form id="contact-form">
+                <label for="name">Ваше имя</label>
+                <input id="name" type="text" name="name" placeholder="Иван Иванов" required="required"/><span class="error-message" id="name-error"></span>
+                <label for="phone">*Номер телефона или почта</label>
+                <input id="phone" type="text" name="phone" placeholder="+791655904737" required="required"/><span class="error-message" id="phone-error"></span>
+                <label for="other">Комментарий</label>
+                <input id="other" type="textarea" name="other" placeholder="Комментарий"/>
+                <button class="button" id="send-button" type="submit">Отправить отзыв</button>
+              </form>
+              <div id="status"></div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="k-welcome">
