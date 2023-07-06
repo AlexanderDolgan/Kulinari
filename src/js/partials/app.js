@@ -96,9 +96,49 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 
-  // popup
-  const form = document.querySelector("#contact-form");
+
+
+//popup
+const popup = document.querySelector(".popup");
+
+//open popup with several buttons whit class .open-popup
+const openPopupButtons = document.querySelectorAll(".open-popup");
+const closePopupButton = document.querySelector(".close-popup");
 const sendButton = document.querySelector("#send-button");
+
+
+openPopupButtons.forEach((openPopupButton) => {
+	openPopupButton.addEventListener("click", () => {
+		popup.classList.add("active");
+	});
+});
+
+closePopupButton.addEventListener("click", () => {
+  popup.classList.remove("active");
+});
+
+// Close popup when clicked outside of it
+window.addEventListener("click", (event) => {
+	if (event.target === popup) {
+		popup.classList.remove("active");
+	}
+});
+
+popup.ontouchstart = function(event) {
+  if (event.target === popup) {
+    popup.classList.remove("active");
+  }
+};
+
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode === 27) {
+    popup.classList.remove("active");
+  }
+}); 
+
+
+// popup
+const form = document.querySelector("#contact-form");
 
 async function sendFormDataToTelegram() {
   const telegramBotApiUrl = 'https://api.telegram.org/botYOUR_TELEGRAM_BOT_TOKEN/sendMessage';
@@ -132,7 +172,6 @@ form.addEventListener('submit', async (event) => {
   form.reset();
 });
 
-const sendButton = document.querySelector('#send-button');
 const requiredInputs = Array.from(form.querySelectorAll('input[required], textarea[required]'));
 
 function checkFormValidity() {

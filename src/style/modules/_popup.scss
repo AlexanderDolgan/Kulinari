@@ -1,6 +1,7 @@
 .popup {
     display: flex;
     position: fixed;
+    justify-content: center;
     top: -200%;
     left: 0;
     width: 100%;
@@ -20,12 +21,21 @@
   
   .popup-content h2 {
     @include responsive-font-size(5rem, 1vw);
+    margin-top: 10rem;
   }
   
   .popup #contact-form {
     margin-top: 5rem;
     display: flex;
     flex-flow: column nowrap;
+  }
+
+  .popup #contact-form label {
+    margin-top: 3rem;
+  }
+
+  .popup #contact-form .button {
+    margin-top: 8rem;
   }
   
   .popup.active {
@@ -35,7 +45,7 @@
   
   .close-popup {
     cursor: pointer;
-    max-width: 10rem;
+    max-width: 15rem;
     align-self: flex-end;
   }
   
