@@ -186,3 +186,28 @@ requiredInputs.forEach(input => {
 checkFormValidity();
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var humBtn = document.querySelector('.hum-btn');
+  var topSiteNav = document.querySelector('.top-site-nav');
+  var body = document.querySelector('body');
+  var isMenuOpen = false;
+
+  humBtn.addEventListener('click', function() {
+    topSiteNav.classList.toggle('site-nav-list-active');
+    humBtn.classList.toggle('active-hum-btn');
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      body.classList.add('no-scroll');
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      console.log('Navigation menu opened');
+    } else {
+      body.classList.remove('no-scroll');
+      body.style.overflow = '';
+      body.style.position = '';
+      console.log('Navigation menu closed');
+    }
+  });
+});

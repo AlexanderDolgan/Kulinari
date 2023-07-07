@@ -53,8 +53,11 @@
 		top: 0;
 		left: 0;
 		z-index: 999;
-		width: 100%;
-		height: 100%;
+		width: 100vw;
+		height: 100vh;
+		justify-content: center;
+		background-color: ac(white);
+		transition: all .3s ease-in-out;
 	& .site-nav-list {
 		margin: 0;
 		padding: 0;
@@ -62,7 +65,7 @@
 		min-width: 32rem;
 		background-color: ac(white);
 		& span {
-			display: block;
+			display: none;
 			padding: 2.5rem 4rem;
 			background-color: ac(lightgray);
 			color: ac(black)
@@ -74,6 +77,7 @@
 				display: block;
 				padding: 2.5rem 4rem;
 				width: 100%;
+				font-size: 5rem;
 				color: ac(black)
 			}
 			& a:hover {
@@ -89,6 +93,58 @@
 		}
 	}
 }
+
+.site-nav-list-active {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	& .site-nav-list {
+		display: none;
+	}
+}
+
+
+.top-site-nav .hum-btn {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 6rem;
+	height: 6rem;
+	justify-content: space-around;
+	align-items: center;
+	align-content: center;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding: 1rem;
+	background-color: ac(secondary);
+	& li {
+		width: 80%;
+		height: .5rem;
+		background-color: ac(black);
+	}
+}
+
+.top-site-nav .active-hum-btn {
+	& li {
+		position: absolute;
+		transition: all .3s ease-in-out;
+		top: 45%;
+	}
+	& li:first-child {
+		rotate: -45deg;
+	}
+	& li:nth-child(2) {
+		display: none;
+	}
+	& li:last-child {
+		rotate: 45deg;
+	}
+}
+
+// .no-scroll { overflow: hidden; }
 
 //logo burger address
 #rest-header .bottom {
@@ -133,79 +189,42 @@
 	}
 }
 
-#rest-header .nav-ham {
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	& button {
-		font-size: 2rem;
-	}
-	& .icon {
-		& ul {
-			display: flex;
-			flex-flow: column nowrap;
-			justify-content: space-around;
-			width: 3rem;
-			height: 3rem;
-			padding: 0;
-			margin: 0;
-			list-style: none;
-			& li {
-				height: .2rem;
-				width: 100%;
-				background-color: ac(black);
-			}
-		}
-	}
-	@media (min-width: $b-xlarge) {
-		display: none;
-	}
-}
 
-.rest-nav {
-	display: none;
-	min-width: 39.25rem;
-	@media (min-width: $b-xlarge) {
-		display: block;
-		width: math.div(3,12);
-	}
-}
+// #rest-header .nav-ham {
+// 	display: flex;
+// 	flex-flow: row nowrap;
+// 	align-items: center;
+// 	& button {
+// 		font-size: 2rem;
+// 	}
+// 	& .icon {
+// 		& ul {
+// 			display: flex;
+// 			flex-flow: column nowrap;
+// 			justify-content: space-around;
+// 			width: 3rem;
+// 			height: 3rem;
+// 			padding: 0;
+// 			margin: 0;
+// 			list-style: none;
+// 			& li {
+// 				height: .2rem;
+// 				width: 100%;
+// 				background-color: ac(black);
+// 			}
+// 		}
+// 	}
+// 	@media (min-width: $b-xlarge) {
+// 		display: none;
+// 	}
+// }
 
-.top-site-nav .hum-btn {
-	display: flex;
-	flex-flow: column nowrap;
-	width: 6rem;
-	height: 6rem;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	background-color: ac(secondary);
-	padding: 1rem;
-	& li {
-		width: 80%;
-		height: .5rem;
-		background-color: ac(black);
-	}
-}
-
-.top-site-nav:hover {
-	position: relative;
-	& li {
-		position: absolute;
-		transition: all .3s ease-in-out;
-		top: 45%;
-	}
-	& li:first-child {
-		rotate: -45deg;
-	}
-	& li:nth-child(2) {
-		display: none;
-	}
-	& li:last-child {
-		rotate: 45deg;
-	}
-}
+// .rest-nav {
+// 	display: none;
+// 	min-width: 39.25rem;
+// 	@media (min-width: $b-xlarge) {
+// 		display: block;
+// 		width: math.div(3,12);
+// 	}
+// }
 
