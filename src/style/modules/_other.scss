@@ -4,9 +4,27 @@
   padding: 0 1rem;
   &__content p:first-of-type {
     margin-top: 8rem;
+    @media(min-width: $b-large) {
+      margin-top: 2rem;
+    }
   }
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
+.k-about__content {
+  grid-column: 1 / span 5;
+  @media (min-width: $b-large) {
+    grid-column: 2 / span 4;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    & h2 {
+      text-align: right;
+      grid-column: span 2;
+    }
+  }
+}
 
 // interior gallery
 .k-gallery {
@@ -15,6 +33,9 @@
   // @media (min-width: $b-medium) {
   //   height: 100rem;
   // }
+  @media (min-width: $b-medium) {
+    padding-bottom: 0;
+  }
 }
 
 .k-gallery__content {

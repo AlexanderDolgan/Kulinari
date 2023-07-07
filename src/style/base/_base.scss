@@ -91,7 +91,7 @@ h6 {font-size: 14px;}
 
 @media (min-width: $b-medium) {
 	h1 {
-		@include responsive-font-size(17rem, 1vw);
+		@include responsive-font-size(12rem, 1vw);
 		line-height: 1;
 	}
 	h2 {

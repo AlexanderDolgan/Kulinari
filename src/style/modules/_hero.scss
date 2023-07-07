@@ -3,22 +3,34 @@
   padding-top: 4rem;
   width: 100%;
   @media (min-width: $b-medium) {
-    max-width: 75vw;
+    padding-top: 10rem;
+    padding-bottom: 0;
   }
 }
 
 .hero .hero-main-header {
   z-index: 1;
+  @media (min-width: $b-medium) {
+    max-width: 75vw;
+  }
 }
 
 .hero .hero-float-img {
   display: block;
+  position: relative;
   width: 100%;
   min-width: 57rem;
   text-align: right;
+  z-index: 1;
   @media (min-width: $b-medium) {
-    margin-top: -40rem;
+    margin-top: -5rem;
+    max-width: 100rem;
+    margin-left: 30%;
+  }
+  @media (min-width: $b-large) {
+    margin-top: -18rem;
     max-width: 123rem;
+    margin-left: 30%;
   }
 }
 
@@ -28,5 +40,24 @@
   left: -40%;
   top: 50%;
   opacity: .1;
-  z-index: -1;
+  @media (min-width: $b-medium) {
+    left: 0;
+    width: 80rem;
+    top:40%;
+  }
+  @media (min-width: $b-xlarge) {
+    left: 0;
+    width: 100rem;
+    top:35%;
+  }
+  @media (min-width: $b-xlarge-h) {
+    left: 0;
+    width: 110rem;
+    top:30%;
+  }
+  @media (min-width: $b-xxlarge) {
+    left: 0;
+    width: 120rem;
+    top:30%;
+  }
 }
