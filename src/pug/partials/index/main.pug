@@ -25,6 +25,18 @@ main
 					img(src="../img/photogallery/interior/interior-image-" + imageName + ".jpg", alt="interior " + imageName)
 				- count++
 
+	section.k-delivery
+		.k-delivery__content 
+			.k-delivery__content-header
+				h2 
+					| Доставка
+			.k-delivery__content-text
+				p 
+					| Закажите доставку или заберите сами в любом из наших кафе.
+			.k-delivery__content-btn 
+				button.button 
+					| Перейти в меню
+
 	section.k-advantages
 		.k-advantages__item
 			.k-advantages__item-image
@@ -62,18 +74,6 @@ main
 				.k-gallery-dishes__item
 					img(src=`../img/photogallery/dishes/dish-${imageName}.jpg`, alt=`Image ${imageName}`)
 				- count++
-
-	section.k-delivery
-		.k-delivery__content 
-			.k-delivery__content-header
-				h2 
-					| Доставка
-			.k-delivery__content-text
-				p 
-					| Закажите доставку или заберите сами в любом из наших кафе.
-			.k-delivery__content-btn 
-				button.button 
-					| Перейти в меню
 
 	section.accordion
 		h2 Наши новости

@@ -56,27 +56,6 @@
   }
 }
 
-//advantages
-.k-advantages {
-  padding-left: 10%;
-  padding-bottom: 17.5rem;
-  &__item {
-    margin-top: 8rem;
-    &:first-child {
-      margin-top: 0;
-    }
-    &-image img {
-      max-width: 20rem;
-    }
-    &-header {
-
-    }
-    &-description {
-
-    }
-  }
-}
-
 //gallery-dishes
 .k-gallery-dishes {
   position: fixed;
@@ -105,12 +84,63 @@
 
 //delivery
 .k-delivery {
-  margin-top: 70vh;
   width: 100%;
+  // padding-bottom: 17.5rem;
   & .k-delivery__content-btn {
     margin-top: 4rem;
     & button {
       width: 100%;
+    }
+  }
+  @media (min-width: $b-large) {
+    & .k-delivery__content {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: minmax(0, auto);
+      &-header {
+        grid-column: span 5;
+      }
+      &-text {
+        grid-column-start: 2;
+        grid-column-end: 6;
+        & p {
+          font-size: 6.5rem;
+          padding: 5rem 0;
+        }
+      }
+      &-btn {
+        grid-column-start: 2;
+        grid-column-end: span 2;
+        max-width: 50rem;
+      }
+    }
+  }
+  @media (min-width: $b-xxlarge) {
+    & .k-delivery__content {
+      &-text {
+        grid-column-end: span 3;
+      }
+    }
+  }
+}
+
+//advantages
+.k-advantages {
+  margin-top: 70vh;
+  padding-left: 10%;
+  &__item {
+    margin-top: 8rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    &-image img {
+      max-width: 20rem;
+    }
+    &-header {
+
+    }
+    &-description {
+
     }
   }
 }
