@@ -22,10 +22,10 @@ section {
 	padding: 15rem 1rem 0;
 	background-color: ac(primary);
 	@media (min-width: $b-medium) {
-		padding: 20rem 0;
+		padding: 20rem 2.5rem 0;
 	}
 	@media (min-width: $b-xlarge) {
-		padding: 30rem 0;
+		padding: 30rem 2.5rem 0;
 	}
 }
 
