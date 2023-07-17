@@ -30,7 +30,7 @@ a {
 	&:hover,
 	&:active,
 	&:focus {
-		color: ac(black, shade);
+		color: ac(secondary, shade);
 		text-decoration: underline;
 	}
 }
@@ -76,10 +76,12 @@ h1 {
 	line-height: 1.2;
 }
 h2 {
-	@include responsive-font-size(5.5rem, 1vw)
+	@include responsive-font-size(5.5rem, 1vw);
+	line-height: 1.2;
 }
 h3 {
-	@include responsive-font-size(3.75rem, 1vw)
+	@include responsive-font-size(3.75rem, 1vw);
+	line-height: 1.2;
 }
 h4 {
 	@include responsive-font-size(6.5rem, 1vw)

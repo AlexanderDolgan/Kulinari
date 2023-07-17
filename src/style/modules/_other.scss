@@ -80,17 +80,27 @@
     height: 100%;
     object-fit: cover;
   }
+  & .k-gallery-dishes__item:nth-child(even) {
+    grid-row: span 2;
+  }
+  & .k-gallery-dishes__item:nth-child(3n) {
+    grid-row: span 2;
+  }
 }
 
 //delivery
 .k-delivery {
   width: 100%;
-  // padding-bottom: 17.5rem;
+  padding-bottom: 17.5rem;
   & .k-delivery__content-btn {
     margin-top: 4rem;
+    max-width: 50rem;
     & button {
       width: 100%;
     }
+  }
+  &__content-image {
+    display: none;
   }
   @media (min-width: $b-large) {
     & .k-delivery__content {
@@ -111,7 +121,9 @@
       &-btn {
         grid-column-start: 2;
         grid-column-end: span 2;
-        max-width: 50rem;
+      }
+      &-image {
+        display: block;
       }
     }
   }
@@ -142,6 +154,11 @@
     &-description {
 
     }
+  }
+  @media (min-width: $b-large) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
   }
 }
 
