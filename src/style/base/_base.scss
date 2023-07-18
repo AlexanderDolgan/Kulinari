@@ -97,10 +97,10 @@ h6 {font-size: 14px;}
 		line-height: 1;
 	}
 	h2 {
-		@include responsive-font-size(10rem, 1vw)
+		@include responsive-font-size(8rem, 1vw)
 	}
 	h3 {
-		@include responsive-font-size(4rem, 1vw)
+		@include responsive-font-size(5rem, 1vw)
 	}
 	h4 {
 		@include responsive-font-size(6.5rem, 1vw)
@@ -118,7 +118,10 @@ h6 {font-size: 14px;}
 		@include responsive-font-size(17rem, 1vw)
 	}
 	h2 {
-		@include responsive-font-size(14rem, 1vw)
+		@include responsive-font-size(12rem, 1vw)
+	}
+	h3 {
+		@include responsive-font-size(6rem, 1vw)
 	}
 }
 

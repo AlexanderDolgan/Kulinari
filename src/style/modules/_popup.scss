@@ -17,6 +17,8 @@
     padding: 2rem;
     display: flex;
     flex-flow: column nowrap;
+    max-width: 80rem;
+    justify-content: center
   }
   
   .popup-content h2 {
@@ -47,5 +49,6 @@
     cursor: pointer;
     max-width: 15rem;
     align-self: flex-end;
+    max-width: 25rem !important;
   }
   
