@@ -186,9 +186,20 @@
   @media (min-width: $b-xlarge) {
     padding: 30rem 2.5rem 0;
     &__item {
+      grid-column-start: 2;
+      grid-column-end: 6;
+      &:nth-child(2) {
+        grid-column-start: 3;
+        grid-column-end: 6;
+      }
+      &:nth-child(3) {
+        grid-column-start: 2;
+        grid-column-end: 6;
+      }
       &-image img {
         max-width: 40rem;
       }
+
     }
   }
   @media (min-width: $b-xxlarge) {
@@ -231,7 +242,7 @@
         grid-column: span 5;
       }
       & address:first-of-type {
-        grid-column: 2 / span 2;
+        grid-column: 2 / span 3;
       }
       & address:nth-of-type(2) {
         grid-column: span 2;

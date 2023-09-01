@@ -62,12 +62,14 @@
 		transition: all .3s ease-in-out;
 		width: 6rem;
 		height: 6rem;
+		@media (min-width: $b-medium) {
+			max-width: 50%;
+		}
 	& .site-nav-list {
 		display: none;
 		margin: 0;
 		padding: 0;
 		list-style: none;
-		min-width: 32rem;
 		background-color: ac(white);
 		& span {
 			display: none;
@@ -80,14 +82,17 @@
 			margin: 0;
 			& a {
 				display: block;
-				padding: 2.5rem 4rem;
+				padding: 2rem 4rem;
 				width: 100%;
 				font-size: 5rem;
-				color: ac(black)
+				color: ac(black);
+				font-family: $second-font-family;
+				transition: all .3s ease-in-out;
 			}
 			& a:hover {
 				text-decoration: none;
 				background-color: ac(secondary);
+				margin-left: 1rem;
 			}
 			& .active-nav {
 				background-color: ac(secondary);
@@ -95,8 +100,6 @@
 		}
 	}
 }
-
-
 
 .site-nav-list-active {
 	width: 100vw;
@@ -106,7 +109,13 @@
 	& .site-nav-list {
 		display: block;
 	}
+	@media (min-width: $b-medium) {
+		max-width: 50%;
+	}
 }
+
+
+
 
 
 .top-site-nav .hum-btn {

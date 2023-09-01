@@ -210,4 +210,20 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Navigation menu closed');
     }
   });
+
+  // Add event listener to close menu when a link is clicked
+  var navLinks = document.querySelectorAll('.top-site-nav a');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (isMenuOpen) {
+        topSiteNav.classList.remove('site-nav-list-active');
+        humBtn.classList.remove('active-hum-btn');
+        body.classList.remove('no-scroll');
+        body.style.overflow = '';
+        body.style.position = '';
+        isMenuOpen = false;
+        console.log('Navigation menu closed after link click');
+      }
+    });
+  });
 });

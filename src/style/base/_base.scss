@@ -115,7 +115,7 @@ h6 {font-size: 14px;}
 	// h1 {font-size: 72px;}
 	// h2 {font-size: 36px;}
 	h1 {
-		@include responsive-font-size(17rem, 1vw)
+		@include responsive-font-size(16rem, 1vw)
 	}
 	h2 {
 		@include responsive-font-size(12rem, 1vw)

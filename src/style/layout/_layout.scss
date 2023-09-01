@@ -14,8 +14,11 @@
 }
 
 #rest-header {
-	padding-top: 1rem;
+	padding: 2.5rem 1rem 0;
 	background-color: ac(primary);
+	@media (min-width: $b-medium) {
+		padding: 2.5rem 2.5rem 0;
+	}
 }
 
 section {
