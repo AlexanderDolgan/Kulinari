@@ -1,23 +1,31 @@
 main
-	section.hero 
+	section.hero
 		h1.hero-main-header
-			| Грузинская кухня 
-			span.is-white-color по&nbsp;домашним рецептам
+			span.is-white-color Грузинская кухня 
+			span.is-third-color по&nbsp;домашним рецептам
 
 		img(src="../img/photogallery/khinkali.png", alt="khinkali").hero-float-img
 		img(src="../img/assets/brand/kulinari-logo-sign.svg", alt="khinkali logo sign").hero-float-logo-sign
 
-	section.k-about.container
-		.k-about__content
+		a(href="#k-reserve").button.hero-btn
+			| Забронировать
+
+	section.k-about
+		.k-about__content.container
 			h2.k-about__header
-				| кафе «Кулинари»
+				| Кулинари
 			p.k-about__text
-				| Кавказская кухня славится своими богатыми вкусами и ароматами, а грузинская кухня является одним из наиболее популярных и известных видов кавказской кухни. Если вы ищете ресторан с настоящим грузинским опытом, то стоит посетить наш ресторан.
+				| Кавказская кухня славится своими богатыми вкусами и ароматами, а грузинская кухня является одним из наиболее популярных и известных видов кавказской кухни. Если вы ищете ресторан с настоящим грузинским опытом, то стоит посетить наш ресторан.
 			p.k-about__text
-				| В нашем ресторане мы предлагаем вам не только аутентичную грузинскую кухню, но и уникальный интерьер, созданный с использованием традиционных грузинских элементов. Вы можете насладиться блюдами, приготовленными по старинным рецептам, в уютной атмосфере, которая подарит вам ощущение, что вы побывали в самой Грузии.
+				| В нашем ресторане мы предлагаем вам не только аутентичную грузинскую кухню, но и уникальный интерьер, созданный с использованием традиционных грузинских элементов. Вы можете насладиться блюдами, приготовленными по старинным рецептам, в уютной атмосфере, которая подарит вам ощущение, что вы побывали в самой Грузии.
+			.k-about-button-section
+				a(href="#").button Меню
+				a(href="#delivery").button Доставка
+				a(href="#").button Банкеты
+				a(href="#afisha").button Новости
 
 	section.k-gallery#galleryContent
-		.k-gallery__content
+		.k-gallery__content.container
 			- var count = 1
 			while count <= 6
 				- var imageName = count.toString()
@@ -25,50 +33,47 @@ main
 					img(src="../img/photogallery/interior/interior-image-" + imageName + ".jpg", alt="interior " + imageName)
 				- count++
 
-	section.k-delivery
-		.k-delivery__content 
+	section.k-advantages#menu-section
+		.k-advantages__content.container
+			h2 Меню
+			.k-advantages__item
+				.k-advantages__item-image
+					img(src="../img/assets/faces.svg", alt="kulinari advantages image")
+				.k-advantages__item-header
+					h3 Грузинская кухня по семейным рецептам
+			.k-advantages__item
+				.k-advantages__item-image
+					img(src="../img/assets/pack.svg", alt="kulinari advantages image")
+				.k-advantages__item-header
+					h3 Все как надо
+			.k-advantages__item
+				.k-advantages__item-image
+					img(src="../img/assets/bee.svg", alt="kulinari advantages image")
+				.k-advantages__item-header
+					h3 Свежие хинкали за три минуты
+			.k-advantages-button-section
+				a(href="#").button Основное
+				a(href="#").button Завтраки
+				a(href="#").button Сезонное
+				a(href="#").button Банкетное
+
+	section#delivery.k-delivery
+		.k-delivery__content.container 
 			.k-delivery__content-header
 				h2 
 					| Доставка
 			.k-delivery__content-text
 				p 
-					| Закажите доставку или заберите сами в любом из наших кафе.
-			.k-delivery__content-btn 
-				button.button 
-					| Перейти в меню
+					| Закажите доставку или заберите сами в любом из наших кафе.
+				p.is-third-color 
+					| Доставка по Москве с 09:00 до 21:00
+				
+			.k-delivery__content-btn
+				a(href="#").button Заказать
 			.k-delivery__content-image
 				img(src="../img/assets/cart-icon-color.svg", alt="kulinari delivery image")
 
-	section.k-advantages
-		.k-advantages__item
-			.k-advantages__item-image
-				img(src="../img/assets/faces.svg", alt="kulinari advantages image")
-			.k-advantages__item-header
-				h3 
-					| Кулинария широкой души
-			.k-advantages__item-description
-				p 
-					| У нас готовят только грузины по семейным рецептам
-		.k-advantages__item
-			.k-advantages__item-image
-				img(src="../img/assets/pack.svg", alt="kulinari advantages image")
-			.k-advantages__item-header
-				h3 
-					| Для тех, кто спешит
-			.k-advantages__item-description
-				p 
-					| Свежие хинкали за три минуты? Без проблем!
-		.k-advantages__item
-			.k-advantages__item-image
-				img(src="../img/assets/bee.svg", alt="kulinari advantages image")
-			.k-advantages__item-header
-				h3 
-					| Все как надо
-			.k-advantages__item-description
-				p 
-					| Хоть у нас и кафе, все блюда ресторанного качества
-
-	section.k-gallery-dishes
+	section.k-gallery-dishes.container
 		.k-gallery-dishes__content
 			- var count = 1
 			while count <= 12
@@ -77,78 +82,79 @@ main
 					img(src=`../img/photogallery/dishes/dish-${imageName}.jpg`, alt=`Image ${imageName}`)
 				- count++
 
-	section.accordion
-		h2 Наши новости
-		.accordion-item
-			.accordion-header
-				h2.accordion-title  Летнее меню Кулинари
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-1.jpg", alt="News")
-				p 
-					| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
-				p 
-					| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
-				p 
-					| В супах два вида окрошки с говяжьим языком, свежими огурцами, редисом, зеленью, горчицей и хреном – на выбор на мацони или квасе (550 руб.), грузинский тёплый суп с мацони с добавлением муки, сметыны, мяты, зелени, лука и куриного яйца (490 руб.) и грузинский гаспачо со свежими огурцами и сулугуни (490 руб.).
-				p 
-					| Веранда рассчитана на 50 посадочных мест и находится во внутреннем дворике ресторана с видом на площадь Цезаря Куникова.
-		.accordion-item
-			.accordion-header
-				h2.accordion-title Открытие летней веранды Оджахури на Садовой-Черногрязской
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-2.jpg", alt="News")
-				p 
-					| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
-				p 
-					| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
-		.accordion-item
-			.accordion-header
-				h2.accordion-title Пасха в Оджахури
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-3.jpg", alt="News")
-				p 
-					| К празднику Великой Пасхи в ресторанах и грузинских лавках Оджахури можно заказать пасху и куличи, которые станут отличным украшением праздничного стола.
-				p 
-					| С 10 по 17 апреля в Оджахури можно купить: кулич с цукатами и изюмом (690 руб.), кулич со сливочным кремом и инжирным вареньем (990 руб.), шоколадный кулич (1150 руб.) или творожную пасху, покрытую шоколадом и орехами (490 руб.).
-		.accordion-item
-			.accordion-header
-				h2.accordion-title  Летнее меню Кулинари
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-1.jpg", alt="News")
-				p 
-					| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
-				p 
-					| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
-				p 
-					| В супах два вида окрошки с говяжьим языком, свежими огурцами, редисом, зеленью, горчицей и хреном – на выбор на мацони или квасе (550 руб.), грузинский тёплый суп с мацони с добавлением муки, сметыны, мяты, зелени, лука и куриного яйца (490 руб.) и грузинский гаспачо со свежими огурцами и сулугуни (490 руб.).
-				p 
-					| Веранда рассчитана на 50 посадочных мест и находится во внутреннем дворике ресторана с видом на площадь Цезаря Куникова.
-		.accordion-item
-			.accordion-header
-				h2.accordion-title Открытие летней веранды Оджахури на Садовой-Черногрязской
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-2.jpg", alt="News")
-				p 
-					| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
-				p 
-					| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
-		.accordion-item
-			.accordion-header
-				h2.accordion-title Пасха в Оджахури
-				img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
-			.accordion-content
-				img(src="../img/photogallery/interior/interior-image-3.jpg", alt="News")
-				p 
-					| К празднику Великой Пасхи в ресторанах и грузинских лавках Оджахури можно заказать пасху и куличи, которые станут отличным украшением праздничного стола.
-				p 
-					| С 10 по 17 апреля в Оджахури можно купить: кулич с цукатами и изюмом (690 руб.), кулич со сливочным кремом и инжирным вареньем (990 руб.), шоколадный кулич (1150 руб.) или творожную пасху, покрытую шоколадом и орехами (490 руб.).
+	section#afisha.accordion.container
+		.accordion__content
+			h2 Новости
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  Летнее меню Кулинари
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-1.jpg", alt="News")
+					p 
+						| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
+					p 
+						| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
+					p 
+						| В супах два вида окрошки с говяжьим языком, свежими огурцами, редисом, зеленью, горчицей и хреном – на выбор на мацони или квасе (550 руб.), грузинский тёплый суп с мацони с добавлением муки, сметыны, мяты, зелени, лука и куриного яйца (490 руб.) и грузинский гаспачо со свежими огурцами и сулугуни (490 руб.).
+					p 
+						| Веранда рассчитана на 50 посадочных мест и находится во внутреннем дворике ресторана с видом на площадь Цезаря Куникова.
+			.accordion-item
+				.accordion-header
+					h2.accordion-title Открытие летней веранды Оджахури на Садовой-Черногрязской
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-2.jpg", alt="News")
+					p 
+						| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
+					p 
+						| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
+			.accordion-item
+				.accordion-header
+					h2.accordion-title Пасха в Оджахури
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-3.jpg", alt="News")
+					p 
+						| К празднику Великой Пасхи в ресторанах и грузинских лавках Оджахури можно заказать пасху и куличи, которые станут отличным украшением праздничного стола.
+					p 
+						| С 10 по 17 апреля в Оджахури можно купить: кулич с цукатами и изюмом (690 руб.), кулич со сливочным кремом и инжирным вареньем (990 руб.), шоколадный кулич (1150 руб.) или творожную пасху, покрытую шоколадом и орехами (490 руб.).
+			.accordion-item
+				.accordion-header
+					h2.accordion-title  Летнее меню Кулинари
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-1.jpg", alt="News")
+					p 
+						| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
+					p 
+						| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
+					p 
+						| В супах два вида окрошки с говяжьим языком, свежими огурцами, редисом, зеленью, горчицей и хреном – на выбор на мацони или квасе (550 руб.), грузинский тёплый суп с мацони с добавлением муки, сметыны, мяты, зелени, лука и куриного яйца (490 руб.) и грузинский гаспачо со свежими огурцами и сулугуни (490 руб.).
+					p 
+						| Веранда рассчитана на 50 посадочных мест и находится во внутреннем дворике ресторана с видом на площадь Цезаря Куникова.
+			.accordion-item
+				.accordion-header
+					h2.accordion-title Открытие летней веранды Оджахури на Садовой-Черногрязской
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-2.jpg", alt="News")
+					p 
+						| В ресторане «Оджахури» на Садовой-Черногрязской заработала летняя веранда и совсем недавно шеф-повар Гига Шервашидзе запустил сезонное меню.
+					p 
+						| В разделе салатов и закусок микс салатных листьев с зеленью, бакинскими огурцами, сельдереем, сливочным сыром и песто (690 руб.); салат из томатов, сметаны, красного лука, петрушки и кинзы (550 руб.); салат из свёклы с обжаренной на гриле грушей, томатами, салатными листьями и сыром (590 руб.) и свежие огурцы в соусе из мацони с зелёной аджикой и чвиштари (530 руб.).
+			.accordion-item
+				.accordion-header
+					h2.accordion-title Пасха в Оджахури
+					img(src="../img/assets/icons/arrow.svg", alt="arrow").accordion-arrow
+				.accordion-content
+					img(src="../img/photogallery/interior/interior-image-3.jpg", alt="News")
+					p 
+						| К празднику Великой Пасхи в ресторанах и грузинских лавках Оджахури можно заказать пасху и куличи, которые станут отличным украшением праздничного стола.
+					p 
+						| С 10 по 17 апреля в Оджахури можно купить: кулич с цукатами и изюмом (690 руб.), кулич со сливочным кремом и инжирным вареньем (990 руб.), шоколадный кулич (1150 руб.) или творожную пасху, покрытую шоколадом и орехами (490 руб.).
 
-	section.k-contacts
+	section.k-contacts.container
 		.k-contacts__content
 			h2.k-contacts__content-header Контакты
 			address.k-contacts__address
@@ -184,7 +190,7 @@ main
 						a(href="tel:+74952878182") Т. +7 495 287 8182
 					li
 						a(href="mailto:info@kulinari.co") E. info@kulinari.co
-	section.k-ya-map
+	section.k-ya-map.container
 		.k-ya-map__content
 			script(
 				type="text/javascript"
@@ -193,15 +199,15 @@ main
 				src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af0645d739bb61745f480591ba3f8e80a86426eb30ff56c7f3a768b31016ed18c&width=100%&height=100%&lang=ru_RU&scroll=false"
 			)
 
-	section.k-reserve
+	section#k-reserve.k-reserve.container
 		.k-reserve__content
-			h2 Забронировать столик или написать отзыв
+			h2 Напишите нам
 			button.button.open-popup Написать
 			//- button.btn.cta-block-btn.open-popup Оставить заявку
 			.popup
 				.popup-content
 					button.close-popup.btn-ghost Закрыть
-					h2 Забронировать столик или оставить отзыв
+					h2 Забронируйте столик или оставьте отзыв
 					form#contact-form
 						label(for='name') Ваше имя
 						input#name(type='text' name='name' placeholder='Иван Иванов' required)
@@ -218,6 +224,6 @@ main
 					#status
 
 
-	section.k-welcome
+	section.k-welcome.container
 		.k-welcome__content
-			h2 Ждём у нас в гостях!
+			h2 Ждём вас у нас в гостях!

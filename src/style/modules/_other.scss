@@ -1,27 +1,103 @@
 //about section
-.k-about {
-	margin-top: -3rem;
-  padding: 0 1rem;
-  &__content p:first-of-type {
-    margin-top: 8rem;
-    @media(min-width: $b-large) {
-      margin-top: 2rem;
+.k-about__content {
+  & h2 {
+    grid-column: 1 / span 7;
+  }
+  & .k-about__text {
+    grid-column: 1 / span 7;
+  }
+  .k-about-button-section {
+    margin-top: 4rem;
+    grid-column: 1 / span 7;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    width: 100%;
+    & .button {
+      width: calc(50% - .5rem);
+      text-align: center;
     }
   }
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  @media (min-width: $b-xlarge) {
+    & h2 {
+      grid-column: 3 / span 13;
+    }
+    & .k-about__text {
+      grid-column: 3 / span 6 ;
+      &:nth-child(3) {
+        grid-column: 10 / span 6 ;
+      }
+    }
+    & .k-about-button-section {
+      grid-column: 3 / span 13;
+      & .button {
+        width: calc(25% - 1rem);
+      }
+    }
+  }
 }
 
-.k-about__content {
-  grid-column: 1 / span 5;
+//advantages
+.k-advantages {
+  &__item {
+    margin-top: 5rem;
+    grid-column: 1 / span 7;
+    text-align: center;
+    &-image {
+      & img {
+        max-width: 15rem;
+      }
+    }
+    &-header h3 {
+      margin-top: 2rem;
+      color: ac(white);
+    }
+  }
   @media (min-width: $b-large) {
-    grid-column: 2 / span 4;
-    gap: 2rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     & h2 {
-      text-align: right;
-      grid-column: span 2;
+      grid-column: 3 / span 13;
+    }
+    &__item {
+      grid-column: 3 / span 4;
+      &-image {
+        & img {
+          max-width: 25rem;
+        }
+      }
+      &:nth-child(3) {
+        grid-column: 7 / span 6;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+      }
+      &:nth-child(4) {
+        grid-column: 13 / span 4;
+      }
+      &-header h3 {
+        margin-top: 2rem;
+        color: ac(white);
+      }
+    }
+  }
+  .k-advantages-button-section {
+    margin-top: 4rem;
+    grid-column: 1 / span 7;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    width: 100%;
+    & .button {
+      width: calc(50% - .5rem);
+      text-align: center;
+    }
+  }
+  @media (min-width: $b-xlarge) {
+    & .k-advantages-button-section {
+      grid-column: 3 / span 13;
+      & .button {
+        width: calc(25% - 1rem);
+      }
     }
   }
 }
@@ -58,21 +134,18 @@
 
 //gallery-dishes
 .k-gallery-dishes {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0 1rem;
-  z-index: -2;
 }
 
 .k-gallery-dishes__content {
+  grid-column: 1 / span 7;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
-  grid-gap: .5rem;
-  max-height: 80vh;
+  grid-gap: 1rem;
+  justify-content: center;
+  @media (min-width: $b-large) {
+    grid-column: 3 / span 13;
+  }
   & .k-gallery-dishes__item img {
     width: 100%;
     height: 100%;
@@ -88,16 +161,30 @@
     gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
     & .k-gallery-dishes__item:nth-child(3n) {
-      grid-row: span 3;
+      grid-row: span 1;
+    }
+    & .k-gallery-dishes__item:nth-child(2n) {
+      grid-row: span 2;
     }
   }
 }
 
 //delivery
 .k-delivery {
+  position: relative;
   width: 100%;
-  padding-bottom: 17.5rem;
-  & .k-delivery__content-btn {
+  &__content-header {
+    grid-column: 1 / span 7;
+  }
+  &__content-text {
+    grid-column: 1 / span 7;
+    color: ac(white);
+    font-size: 3rem;
+  }
+  &__content-btn {
+    grid-column: 1 / span 7;
+  }
+  &__content-btn {
     margin-top: 4rem;
     max-width: 50rem;
     & button {
@@ -105,109 +192,29 @@
     }
   }
   &__content-image {
-    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    width: 10rem;
   }
   @media (min-width: $b-large) {
-    & .k-delivery__content {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: minmax(0, auto);
-      &-header {
-        grid-column: span 5;
-      }
-      &-text {
-        grid-column-start: 2;
-        grid-column-end: 6;
-        & p {
-          font-size: 6.5rem;
-          padding: 5rem 0;
-        }
-      }
-      &-btn {
-        grid-column-start: 2;
-        grid-column-end: span 2;
-      }
-      &-image {
-        display: block;
-        max-width: 62rem;
-      }
+    &__content-header {
+      grid-column: 3 / span 13;
+    }
+    &__content-text {
+      grid-column: 3 / span 13;
+    }
+    &__content-btn {
+      grid-column: 3 / span 13;
+    }
+    &__content-image {
+      width: 20rem;
+      right: 13%;
     }
   }
-  @media (min-width: $b-xxlarge) {
-    & .k-delivery__content {
-      &-text {
-        grid-column-end: span 3;
-      }
-      &-image {
-        grid-column: span 2;
-      }
-    }
-  }
-}
-
-//advantages
-.k-advantages {
-  margin-top: 70vh;
-  padding-left: 10%;
-
-  &__item {
-    margin-top: 8rem;
-    &:first-child {
-      margin-top: 0;
-    }
-    &-image img {
-      max-width: 20rem;
-    }
-    &-header {
-
-    }
-    &-description {
-
-    }
-  }
-  @media (min-width: $b-medium) {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    margin-top: 80vh;
-    width: 100%;
-    padding: 17.5rem 2.5rem 0;
-    &__item {
-      grid-column: span 5;
-      &:nth-child(2) {
-        grid-column-start: 2;
-        grid-column-end: 6;
-      }
-      &:nth-child(3) {
-        grid-column-start: 3;
-        grid-column-end: 6;
-      }
-    }
-  }
-  @media (min-width: $b-xlarge) {
-    padding: 30rem 2.5rem 0;
-    &__item {
-      grid-column-start: 2;
-      grid-column-end: 6;
-      &:nth-child(2) {
-        grid-column-start: 3;
-        grid-column-end: 6;
-      }
-      &:nth-child(3) {
-        grid-column-start: 2;
-        grid-column-end: 6;
-      }
-      &-image img {
-        max-width: 40rem;
-      }
-
-    }
-  }
-  @media (min-width: $b-xxlarge) {
-    padding: 30rem 2.5rem 0;
-    &__item {
-      &-image img {
-        max-width: 50rem;
-      }
+  @media (min-width: $b-xlarge-h) {
+    &__content-image {
+      width: 30rem;
     }
   }
 }
@@ -216,6 +223,12 @@
 .k-contacts {
   position: relative;
   width: 100%;
+  &__content {
+    grid-column: 1 / span 7;
+    @media (min-width: $b-large) {
+      grid-column: 3 / span 13;
+    }
+  }
   & .k-contacts__address {
     margin-top: 4rem;
     & ul {
@@ -225,11 +238,11 @@
       & li {
         & a {
           display: block;
-          padding-left: 10rem;
           margin-top: 2rem;
         }
         & h3 a {
           padding-left: 0;
+          color: ac(third);
         }
       }
     }
@@ -237,15 +250,9 @@
   @media (min-width: $b-xlarge) {
     & .k-contacts__content {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       & h2 {
-        grid-column: span 5;
-      }
-      & address:first-of-type {
-        grid-column: 2 / span 3;
-      }
-      & address:nth-of-type(2) {
-        grid-column: span 2;
+        grid-column: 1 / span 2;
       }
       & .k-contacts__address ul li a, .k-contacts__address ul li p {
         text-indent: 0;
@@ -259,37 +266,37 @@
 .k-ya-map {
   width: 100%;
   min-height: 50rem;
-  padding-top: 8rem;
   &__content {
     width: 100%;
     height: 100%;
+    grid-column: 1 / span 7;
+    @media (min-width: $b-large) {
+      grid-column: 3 / span 13;
+    }
   }
   @media (min-width: $b-medium) {
     min-height: 60vh;
   }
   @media (min-width: $b-xlarge) {
     min-height: 70vh;
-    & .k-ya-map__content {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      & iframe {
-        grid-column: 2 / span 4;
-      }
-    }
   }
 }
 
 //reserve
 .k-reserve {
   width: 100%;
+  &__content {
+    grid-column: 1 / span 7;
+    @media (min-width: $b-large) {
+      grid-column: 3 / span 13;
+    }
+  }
   & button {
     width: 100%;
     margin-top: 4rem;
   }
   @media (min-width: $b-xlarge) {
     & .k-reserve__content {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
       & h2 {
         grid-column: 2 / span 4;
       }
@@ -305,9 +312,12 @@
 
 //welcome
 .k-welcome {
+  &__content {
+    grid-column: 1 / span 7;
+    @media (min-width: $b-large) {
+      grid-column: 3 / span 13;
+    }
+  }
   width: 100%;
   padding-bottom: 15rem;
-  @media (min-width: $b-xlarge) {
-    text-align: center;
-  }
 }

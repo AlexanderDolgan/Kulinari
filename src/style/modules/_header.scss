@@ -1,10 +1,12 @@
 //btn back to main, socials
+#rest-header {
+	background-color: ac(primary);
+}
 #rest-header .top {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	font-family: $global-font-family;
-	max-height: 5rem;
 	align-items: center;
 }
 
@@ -13,10 +15,6 @@
 	height: 100%;
 	& img {
 		display: block;
-		max-width: 17rem;
-		@media (min-width: $b-medium) {
-			max-width: 23.75rem;
-		}
 	}
 	@media (min-width: $b-medium) {
 		max-width: 23.75rem;
@@ -29,6 +27,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 2rem;
+	font-size: 2.25rem;
 	& a {
 		display: flex;
 		flex-flow: row-reverse nowrap;
@@ -47,8 +46,11 @@
 	@media (min-width: $b-large) {
 		display: flex;
 		width: 100%;
-		justify-content: center;
-		margin-right: 5%;
+		margin-left: -15rem;
+	}
+	@media (min-width: $b-xlarge-h) {
+		margin-left: 0;
+		max-width: 28rem;
 	}
 }
 
@@ -62,40 +64,56 @@
 		transition: all .3s ease-in-out;
 		width: 6rem;
 		height: 6rem;
-		@media (min-width: $b-medium) {
-			max-width: 50%;
+		@media (min-width: $b-xlarge-h) {
+			position: relative;
+			flex-flow: row nowrap;
+			align-content: center;
+			width: 100%;
+			height: 100%;
 		}
-	& .site-nav-list {
-		display: none;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		background-color: ac(white);
-		& span {
+		& .site-nav-list {
 			display: none;
-			padding: 2.5rem 4rem;
-			background-color: ac(lightgray);
-			color: ac(black)
-		}
-		& li {
-			padding: 0;
+			width: 100%;
 			margin: 0;
-			& a {
-				display: block;
-				padding: 2rem 4rem;
-				width: 100%;
-				font-size: 5rem;
-				color: ac(black);
-				font-family: $second-font-family;
-				transition: all .3s ease-in-out;
+			padding: 0;
+			list-style: none;
+			background-color: ac(white);
+			@media (min-width: $b-xlarge-h) {
+				display: flex;
+				background-color: transparent;
+				justify-content: center;
 			}
-			& a:hover {
-				text-decoration: none;
-				background-color: ac(secondary);
-				margin-left: 1rem;
+			& li {
+				padding: 0;
+				margin: 0;
+				& a {
+					display: block;
+					padding: 2.5rem 2rem;
+					width: 100%;
+					font-size: 5rem;
+					color: ac(black);
+					font-family: $second-font-family;
+					transition: all .3s ease-in-out;
+					border: solid .1rem transparent;
+					@media (min-width: $b-xlarge-h) {
+						color: ac(white);
+						font-size: 2.25rem;
+						padding: 1rem 2rem;
+					}
+				}
+				& a:hover {
+					text-decoration: none;
+					background-color: ac(secondary);
+					color: ac(primary);
+				}
 			}
-			& .active-nav {
+			& .current-menu-item {
 				background-color: ac(secondary);
+				@media (min-width: $b-xlarge-h) {
+					border: solid .1rem ac(secondary);
+					background-color: transparent;
+					color: ac(white);
+					font-size: 2.25rem;
 			}
 		}
 	}
@@ -113,10 +131,6 @@
 		max-width: 50%;
 	}
 }
-
-
-
-
 
 .top-site-nav .hum-btn {
 	position: absolute;
@@ -138,6 +152,9 @@
 		width: 80%;
 		height: .5rem;
 		background-color: ac(black);
+	}
+	@media (min-width: $b-xlarge-h) {
+		display: none;
 	}
 }
 

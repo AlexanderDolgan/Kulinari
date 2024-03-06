@@ -1,17 +1,28 @@
 .hero {
   position: relative;
-  padding-top: 4rem;
+  margin-top: 2rem;
   width: 100%;
   @media (min-width: $b-medium) {
-    padding-top: 10rem;
     padding-bottom: 0;
+    margin-left: 13%;
   }
+  @media (min-width: $b-large) {
+		margin-top: 1rem;
+	}
+	@media (min-width: $b-xlarge-h) {
+		margin-top: 6rem;
+	}
 }
 
 .hero .hero-main-header {
   z-index: 1;
+  grid-column: 1 / span 7;
   @media (min-width: $b-medium) {
     max-width: 77vw;
+  }
+  @media (min-width: $b-xxxxlarge) {
+    max-width: 67vw;
+    margin-left: 12%;
   }
 }
 
@@ -21,14 +32,19 @@
   width: 100%;
   min-width: 57rem;
   text-align: right;
-  z-index: 1;
+  z-index: -1;
   @media (min-width: $b-medium) {
     margin-top: -5rem;
     max-width: 100rem;
     margin-left: 30%;
   }
   @media (min-width: $b-large) {
-    margin-top: -18rem;
+    margin-top: -15rem;
+    max-width: 93rem;
+    margin-left: 40%;
+  }
+  @media (min-width: $b-xxxxlarge) {
+    margin-top: -8rem;
     max-width: 123rem;
     margin-left: 30%;
   }
@@ -40,6 +56,7 @@
   left: -40%;
   top: 50%;
   opacity: .1;
+  z-index: -1;
   @media (min-width: $b-medium) {
     left: 0;
     width: 80rem;
@@ -59,5 +76,27 @@
     left: 0;
     width: 120rem;
     top:30%;
+  }
+}
+
+.hero-btn {
+  width: 100%;
+  max-width: 37.5rem;
+  padding: 3rem;
+  @media(min-width: $b-xlarge) {
+    position: absolute;
+    width: auto;
+    top: 60rem;
+    z-index: 9999;
+    max-width: none;
+  }
+  @media(min-width: $b-xlarge-h) {
+    top: 63rem;
+  }
+  @media(min-width: $b-xxlarge) {
+    top: 75rem;
+  }
+  @media (min-width: $b-xxxxlarge) {
+    left: 12.5%;
   }
 }

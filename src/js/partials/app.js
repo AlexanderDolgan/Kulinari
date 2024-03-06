@@ -227,3 +227,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+//перевести чипс в меню доставки на 0 позицию
+const chipContainer = document.querySelector(".main-menu-list .wc-block-product-categories-list");
+const activeElement = chipContainer.querySelector(".is-active");
+
+if (chipContainer && activeElement) {
+  const currentOffsetLeft = activeElement.offsetLeft;
+
+  const newOffsetLeft = currentOffsetLeft;
+
+  chipContainer.scrollLeft = newOffsetLeft;
+
+  console.log("New OffsetLeft from container:", newOffsetLeft);
+} else {
+  console.log("Container or active element not found.");
+};
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var menuHumBtn = document.querySelector('.hum-btn-delivery');
+  var menuTopSiteNav = document.querySelector('.woocommerce-products-header .category-nav:nth-child(3)');
+  var body = document.querySelector('body');
+  var isMenuOpen = false;
+
+  menuHumBtn.addEventListener('click', function() {
+    menuTopSiteNav.classList.toggle('menu-site-nav-list-active');
+    menuHumBtn.classList.toggle('active-hum-btn');
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      body.classList.add('no-scroll');
+      body.style.overflow = 'hidden';
+      body.style.position = 'fixed';
+      console.log('Navigation menu opened');
+    } else {
+      body.classList.remove('no-scroll');
+      body.style.overflow = '';
+      body.style.position = '';
+      console.log('Navigation menu closed');
+    }
+  });
+
+  // Add event listener to close menu when a link is clicked
+  var navLinks = document.querySelectorAll('.top-site-nav a');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (isMenuOpen) {
+        menuTopSiteNav.classList.remove('site-nav-list-active');
+        humBtn.classList.remove('active-hum-btn');
+        body.classList.remove('no-scroll');
+        body.style.overflow = '';
+        body.style.position = '';
+        isMenuOpen = false;
+        console.log('Navigation menu closed after link click');
+      }
+    });
+  });
+});

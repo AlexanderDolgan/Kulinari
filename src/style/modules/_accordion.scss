@@ -5,10 +5,15 @@
   }
 }
 
-.accordion .accordion-item {
-  @media (min-width: $b-xlarge) {
-    padding-left: 20%;
+.accordion__content {
+  grid-column: 1 / span 7;
+  @media (min-width: $b-large) {
+    grid-column: 3 / span 13;
   }
+}
+
+.accordion .accordion-item {
+
 } 
 
 .accordion .accordion-item .accordion-header {

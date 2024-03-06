@@ -1,20 +1,32 @@
 .button {
 	font-family: $second-font-family;
-	font-size: 3.5rem;
+	font-size: 2.25rem;
 	font-weight: 500;
-	padding: 3.5rem 6rem;
-	background-color: ac(secondary);
-	color: ac(black);
-	border: none;
+	padding: 2rem 1rem;
+	background-color: transparent;
+	color: ac(secondary);
+	border: solid .2rem ac(secondary);
 	box-shadow: 0 0 1rem rgba(0,0,0,.1);
 	transition: box-shadow .33s ease-in-out,
 	background-color .1s ease-in-out;
+	@media(min-width: $b-large) {
+		font-size: 2.5rem;
+		padding: 3rem 1rem;
+	}
+	@media(min-width: $b-xlarge-h) {
+		font-size: 3.5rem;
+		padding: 4rem 1rem;
+	}
+	@media(min-width: $b-xxxlarge) {
+		font-size: 4.5rem;
+	}
 }
 
 .button:hover {
-	box-shadow: 0 1.5rem 1.5rem rgba(0,0,0,.45);
-	background-color: ac(third);
+	box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.45);
+	background-color: ac(secondary);
 	color: ac(black);
+	text-decoration: none;
 }
 
 .button:active,

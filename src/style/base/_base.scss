@@ -51,7 +51,6 @@ p {
 	line-height: $paragraph-lineheight;
 	margin-bottom: 0;
 	margin-top: 2rem;
-	text-indent: 10rem;
 }
 
 // Headings
@@ -72,7 +71,7 @@ h6 {
 
 
 h1 {
-	@include responsive-font-size(6.75rem, 1vw);
+	@include responsive-font-size(6rem, 1vw);
 	line-height: 1.2;
 }
 h2 {
@@ -80,7 +79,7 @@ h2 {
 	line-height: 1.2;
 }
 h3 {
-	@include responsive-font-size(3.75rem, 1vw);
+	@include responsive-font-size(3rem, 1vw);
 	line-height: 1.2;
 }
 h4 {
@@ -100,7 +99,7 @@ h6 {font-size: 14px;}
 		@include responsive-font-size(8rem, 1vw)
 	}
 	h3 {
-		@include responsive-font-size(5rem, 1vw)
+		font-size: 3rem;
 	}
 	h4 {
 		@include responsive-font-size(6.5rem, 1vw)
@@ -115,13 +114,13 @@ h6 {font-size: 14px;}
 	// h1 {font-size: 72px;}
 	// h2 {font-size: 36px;}
 	h1 {
-		@include responsive-font-size(16rem, 1vw)
+		@include responsive-font-size(13rem, 1vw)
 	}
 	h2 {
-		@include responsive-font-size(12rem, 1vw)
+		@include responsive-font-size(8rem, 1vw)
 	}
 	h3 {
-		@include responsive-font-size(6rem, 1vw)
+		@include responsive-font-size(2rem, 1vw)
 	}
 }
 

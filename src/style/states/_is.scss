@@ -38,7 +38,11 @@
 }
 
 .is-primary-color {
-	color: ac(secondary);
+	color: ac(primary);
+}
+
+.is-third-color {
+	color: ac(third) !important;
 }
 
 .is-white-color {
